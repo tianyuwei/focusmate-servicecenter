@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.focusmate.services.datasource.mapper.TimeDiscountMapper">
+  <resultMap id="BaseResultMap" type="com.focusmate.services.datasource.entities.TimeDiscount">
+    <id column="Id" jdbcType="INTEGER" property="id" />
+    <result column="ProductId" jdbcType="INTEGER" property="productId" />
+    <result column="DurationStart" jdbcType="TIME" property="durationStart" />
+    <result column="DurationEnd" jdbcType="TIME" property="durationEnd" />
+    <result column="Discount" jdbcType="INTEGER" property="discount" />
+    <result column="Status" jdbcType="INTEGER" property="status" />
+    <result column="CreateTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="LastModifyTime" jdbcType="TIMESTAMP" property="lastModifyTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  <choose>
+                    <when test="criterion.isBinary">
+                      and ${criterion.condition} unhex(#{criterion.value})
+                    </when>
+                    <otherwise>
+                      and ${criterion.condition} #{criterion.value}
+                    </otherwise>
+                  </choose>
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    <choose>
+                      <when test="criterion.isBinary">
+                        unhex(#{listItem})
+                      </when>
+                      <otherwise>
+                        #{listItem}
+                      </otherwise>
+                    </choose>
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  <choose>
+                    <when test="criterion.isBinary">
+                      and ${criterion.condition} unhex(#{criterion.value})
+                    </when>
+                    <otherwise>
+                      and ${criterion.condition} #{criterion.value}
+                    </otherwise>
+                  </choose>
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    <choose>
+                      <when test="criterion.isBinary">
+                        unhex(#{listItem})
+                      </when>
+                      <otherwise>
+                        #{listItem}
+                      </otherwise>
+                    </choose>
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    Id, ProductId, DurationStart, DurationEnd, Discount, Status, CreateTime, LastModifyTime
+  </sql>
+  <select id="selectByExample" parameterType="com.focusmate.services.datasource.entities.TimeDiscountExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from TimeDiscount
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="size != null">
+      limit
+      <if test="offset != null">
+        #{offset},
+      </if>
+      #{size}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TimeDiscount
+    where Id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from TimeDiscount
+    where Id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.focusmate.services.datasource.entities.TimeDiscountExample">
+    delete from TimeDiscount
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.focusmate.services.datasource.entities.TimeDiscount">
+    insert into TimeDiscount (Id, ProductId, DurationStart, 
+      DurationEnd, Discount, Status, 
+      CreateTime, LastModifyTime)
+    values (#{id,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, #{durationStart,jdbcType=TIME}, 
+      #{durationEnd,jdbcType=TIME}, #{discount,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastModifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.focusmate.services.datasource.entities.TimeDiscount">
+    insert into TimeDiscount
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        Id,
+      </if>
+      <if test="productId != null">
+        ProductId,
+      </if>
+      <if test="durationStart != null">
+        DurationStart,
+      </if>
+      <if test="durationEnd != null">
+        DurationEnd,
+      </if>
+      <if test="discount != null">
+        Discount,
+      </if>
+      <if test="status != null">
+        Status,
+      </if>
+      <if test="createTime != null">
+        CreateTime,
+      </if>
+      <if test="lastModifyTime != null">
+        LastModifyTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="productId != null">
+        #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="durationStart != null">
+        #{durationStart,jdbcType=TIME},
+      </if>
+      <if test="durationEnd != null">
+        #{durationEnd,jdbcType=TIME},
+      </if>
+      <if test="discount != null">
+        #{discount,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyTime != null">
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.focusmate.services.datasource.entities.TimeDiscountExample" resultType="java.lang.Integer">
+    select count(*) from TimeDiscount
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update TimeDiscount
+    <set>
+      <if test="record.id != null">
+        Id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.productId != null">
+        ProductId = #{record.productId,jdbcType=INTEGER},
+      </if>
+      <if test="record.durationStart != null">
+        DurationStart = #{record.durationStart,jdbcType=TIME},
+      </if>
+      <if test="record.durationEnd != null">
+        DurationEnd = #{record.durationEnd,jdbcType=TIME},
+      </if>
+      <if test="record.discount != null">
+        Discount = #{record.discount,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null">
+        Status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null">
+        CreateTime = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastModifyTime != null">
+        LastModifyTime = #{record.lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update TimeDiscount
+    set Id = #{record.id,jdbcType=INTEGER},
+      ProductId = #{record.productId,jdbcType=INTEGER},
+      DurationStart = #{record.durationStart,jdbcType=TIME},
+      DurationEnd = #{record.durationEnd,jdbcType=TIME},
+      Discount = #{record.discount,jdbcType=INTEGER},
+      Status = #{record.status,jdbcType=INTEGER},
+      CreateTime = #{record.createTime,jdbcType=TIMESTAMP},
+      LastModifyTime = #{record.lastModifyTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.focusmate.services.datasource.entities.TimeDiscount">
+    update TimeDiscount
+    <set>
+      <if test="productId != null">
+        ProductId = #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="durationStart != null">
+        DurationStart = #{durationStart,jdbcType=TIME},
+      </if>
+      <if test="durationEnd != null">
+        DurationEnd = #{durationEnd,jdbcType=TIME},
+      </if>
+      <if test="discount != null">
+        Discount = #{discount,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        Status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        CreateTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyTime != null">
+        LastModifyTime = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.focusmate.services.datasource.entities.TimeDiscount">
+    update TimeDiscount
+    set ProductId = #{productId,jdbcType=INTEGER},
+      DurationStart = #{durationStart,jdbcType=TIME},
+      DurationEnd = #{durationEnd,jdbcType=TIME},
+      Discount = #{discount,jdbcType=INTEGER},
+      Status = #{status,jdbcType=INTEGER},
+      CreateTime = #{createTime,jdbcType=TIMESTAMP},
+      LastModifyTime = #{lastModifyTime,jdbcType=TIMESTAMP}
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -6,7 +6,8 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * workshop
+ * 工作间表
+ * Workshop
  */
 public class WorkshopExample {
     // 顺序排序
@@ -15,125 +16,131 @@ public class WorkshopExample {
     // 倒序排序
     public static final String ORDERBYDIRECTION_DESC = "desc";
 
-    public static final String FIELD_ID = "id";
+    public static final String FIELD_ID = "Id";
 
-    public static final String FIELD_STATION_ID = "station_id";
+    // 洗车站点ID号
+    public static final String FIELD_STATIONID = "StationId";
 
-    public static final String FIELD_STATUS = "status";
+    // 工作间状态信息
+    public static final String FIELD_STATUS = "Status";
 
-    public static final String FIELD_RECORD_TIME = "record_time";
+    // 创建时间
+    public static final String FIELD_CREATETIME = "CreateTime";
+
+    // 修改时间
+    public static final String FIELD_LASTMODIFYTIME = "LastModifyTime";
 
     /**
-     * workshop
+     * Workshop
      */
     protected Integer offset;
 
     /**
-     * workshop
+     * Workshop
      */
     protected Integer size;
 
     /**
-     * workshop
+     * Workshop
      */
     protected String orderByClause;
 
     /**
-     * workshop
+     * Workshop
      */
     protected boolean distinct;
 
     /**
-     * workshop
+     * Workshop
      */
     protected List<Criteria> oredCriteria;
 
     /**
-     * workshop
+     * Workshop
      */
     public WorkshopExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
     /**
-     * workshop
+     * Workshop
      */
     public void setOrderByClause(String orderByClause) {
         this.orderByClause = orderByClause;
     }
 
     /**
-     * workshop
+     * Workshop
      */
     public void setOrderByClause(OrderBy orderBy) {
         this.orderByClause = orderBy.toString();
     }
 
     /**
-     * workshop
+     * Workshop
      */
     public String getOrderByClause() {
         return orderByClause;
     }
 
     /**
-     * workshop
+     * Workshop
      */
     public void setDistinct(boolean distinct) {
         this.distinct = distinct;
     }
 
     /**
-     * workshop
+     * Workshop
      */
     public boolean isDistinct() {
         return distinct;
     }
 
     /**
-     * workshop
+     * Workshop
      */
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
 
     /**
-     * workshop
+     * Workshop
      */
     public Integer getOffset() {
         return offset;
     }
 
     /**
-     * workshop
+     * Workshop
      */
     public void setSize(Integer size) {
         this.size = size;
     }
 
     /**
-     * workshop
+     * Workshop
      */
     public Integer getSize() {
         return size;
     }
 
     /**
-     * workshop
+     * Workshop
      */
     public List<Criteria> getOredCriteria() {
         return oredCriteria;
     }
 
     /**
-     * workshop
+     * Workshop
      */
     public void or(Criteria criteria) {
         oredCriteria.add(criteria);
     }
 
     /**
-     * workshop
+     * Workshop
      */
     public Criteria or() {
         Criteria criteria = createCriteriaInternal();
@@ -142,7 +149,7 @@ public class WorkshopExample {
     }
 
     /**
-     * workshop
+     * Workshop
      */
     public Criteria createCriteria() {
         Criteria criteria = createCriteriaInternal();
@@ -153,7 +160,7 @@ public class WorkshopExample {
     }
 
     /**
-     * workshop
+     * Workshop
      */
     protected Criteria createCriteriaInternal() {
         Criteria criteria = new Criteria();
@@ -161,7 +168,7 @@ public class WorkshopExample {
     }
 
     /**
-     * workshop
+     * Workshop
      */
     public void clear() {
         oredCriteria.clear();
@@ -170,7 +177,8 @@ public class WorkshopExample {
     }
 
     /**
-     * workshop
+     * 工作间表
+     * Workshop
      */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
@@ -224,356 +232,491 @@ public class WorkshopExample {
         /**
          */
         public Criteria andIdIsNull() {
-            addCriterion("id is null");
+            addCriterion("Id is null");
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andIdIsNotNull() {
-            addCriterion("id is not null");
+            addCriterion("Id is not null");
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andIdEqualTo(Integer value) {
-            addCriterion("id =", value, "id", false);
+            addCriterion("Id =", value, "id", false);
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andIdNotEqualTo(Integer value) {
-            addCriterion("id <>", value, "id", false);
+            addCriterion("Id <>", value, "id", false);
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andIdGreaterThan(Integer value) {
-            addCriterion("id >", value, "id", false);
+            addCriterion("Id >", value, "id", false);
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("id >=", value, "id", false);
+            addCriterion("Id >=", value, "id", false);
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andIdLessThan(Integer value) {
-            addCriterion("id <", value, "id", false);
+            addCriterion("Id <", value, "id", false);
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andIdLessThanOrEqualTo(Integer value) {
-            addCriterion("id <=", value, "id", false);
+            addCriterion("Id <=", value, "id", false);
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andIdIn(List<Integer> values) {
-            addCriterion("id in", values, "id", false);
+            addCriterion("Id in", values, "id", false);
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andIdNotIn(List<Integer> values) {
-            addCriterion("id not in", values, "id", false);
+            addCriterion("Id not in", values, "id", false);
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andIdBetween(Integer value1, Integer value2) {
-            addCriterion("id between", value1, value2, "id");
+            addCriterion("Id between", value1, value2, "id");
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("id not between", value1, value2, "id");
+            addCriterion("Id not between", value1, value2, "id");
             return (Criteria) this;
         }
 
         /**
+         * 洗车站点ID号
          */
         public Criteria andStationIdIsNull() {
-            addCriterion("station_id is null");
+            addCriterion("StationId is null");
             return (Criteria) this;
         }
 
         /**
+         * 洗车站点ID号
          */
         public Criteria andStationIdIsNotNull() {
-            addCriterion("station_id is not null");
+            addCriterion("StationId is not null");
             return (Criteria) this;
         }
 
         /**
+         * 洗车站点ID号
          */
         public Criteria andStationIdEqualTo(Integer value) {
-            addCriterion("station_id =", value, "stationId", false);
+            addCriterion("StationId =", value, "stationId", false);
             return (Criteria) this;
         }
 
         /**
+         * 洗车站点ID号
          */
         public Criteria andStationIdNotEqualTo(Integer value) {
-            addCriterion("station_id <>", value, "stationId", false);
+            addCriterion("StationId <>", value, "stationId", false);
             return (Criteria) this;
         }
 
         /**
+         * 洗车站点ID号
          */
         public Criteria andStationIdGreaterThan(Integer value) {
-            addCriterion("station_id >", value, "stationId", false);
+            addCriterion("StationId >", value, "stationId", false);
             return (Criteria) this;
         }
 
         /**
+         * 洗车站点ID号
          */
         public Criteria andStationIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("station_id >=", value, "stationId", false);
+            addCriterion("StationId >=", value, "stationId", false);
             return (Criteria) this;
         }
 
         /**
+         * 洗车站点ID号
          */
         public Criteria andStationIdLessThan(Integer value) {
-            addCriterion("station_id <", value, "stationId", false);
+            addCriterion("StationId <", value, "stationId", false);
             return (Criteria) this;
         }
 
         /**
+         * 洗车站点ID号
          */
         public Criteria andStationIdLessThanOrEqualTo(Integer value) {
-            addCriterion("station_id <=", value, "stationId", false);
+            addCriterion("StationId <=", value, "stationId", false);
             return (Criteria) this;
         }
 
         /**
+         * 洗车站点ID号
          */
         public Criteria andStationIdIn(List<Integer> values) {
-            addCriterion("station_id in", values, "stationId", false);
+            addCriterion("StationId in", values, "stationId", false);
             return (Criteria) this;
         }
 
         /**
+         * 洗车站点ID号
          */
         public Criteria andStationIdNotIn(List<Integer> values) {
-            addCriterion("station_id not in", values, "stationId", false);
+            addCriterion("StationId not in", values, "stationId", false);
             return (Criteria) this;
         }
 
         /**
+         * 洗车站点ID号
          */
         public Criteria andStationIdBetween(Integer value1, Integer value2) {
-            addCriterion("station_id between", value1, value2, "stationId");
+            addCriterion("StationId between", value1, value2, "stationId");
             return (Criteria) this;
         }
 
         /**
+         * 洗车站点ID号
          */
         public Criteria andStationIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("station_id not between", value1, value2, "stationId");
+            addCriterion("StationId not between", value1, value2, "stationId");
             return (Criteria) this;
         }
 
         /**
+         * 工作间状态信息
          */
         public Criteria andStatusIsNull() {
-            addCriterion("status is null");
+            addCriterion("Status is null");
             return (Criteria) this;
         }
 
         /**
+         * 工作间状态信息
          */
         public Criteria andStatusIsNotNull() {
-            addCriterion("status is not null");
+            addCriterion("Status is not null");
             return (Criteria) this;
         }
 
         /**
+         * 工作间状态信息
          */
         public Criteria andStatusEqualTo(String value) {
-            addCriterion("status =", value, "status", false);
+            addCriterion("Status =", value, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 工作间状态信息
          */
         public Criteria andStatusNotEqualTo(String value) {
-            addCriterion("status <>", value, "status", false);
+            addCriterion("Status <>", value, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 工作间状态信息
          */
         public Criteria andStatusGreaterThan(String value) {
-            addCriterion("status >", value, "status", false);
+            addCriterion("Status >", value, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 工作间状态信息
          */
         public Criteria andStatusGreaterThanOrEqualTo(String value) {
-            addCriterion("status >=", value, "status", false);
+            addCriterion("Status >=", value, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 工作间状态信息
          */
         public Criteria andStatusLessThan(String value) {
-            addCriterion("status <", value, "status", false);
+            addCriterion("Status <", value, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 工作间状态信息
          */
         public Criteria andStatusLessThanOrEqualTo(String value) {
-            addCriterion("status <=", value, "status", false);
+            addCriterion("Status <=", value, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 工作间状态信息
          */
         public Criteria andStatusLike(String value) {
-            addCriterion("status like", value, "status", false);
+            addCriterion("Status like", value, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 工作间状态信息
          */
         public Criteria andStatusNotLike(String value) {
-            addCriterion("status not like", value, "status", false);
+            addCriterion("Status not like", value, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 工作间状态信息
          */
         public Criteria andStatusIn(List<String> values) {
-            addCriterion("status in", values, "status", false);
+            addCriterion("Status in", values, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 工作间状态信息
          */
         public Criteria andStatusNotIn(List<String> values) {
-            addCriterion("status not in", values, "status", false);
+            addCriterion("Status not in", values, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 工作间状态信息
          */
         public Criteria andStatusBetween(String value1, String value2) {
-            addCriterion("status between", value1, value2, "status");
+            addCriterion("Status between", value1, value2, "status");
             return (Criteria) this;
         }
 
         /**
+         * 工作间状态信息
          */
         public Criteria andStatusNotBetween(String value1, String value2) {
-            addCriterion("status not between", value1, value2, "status");
+            addCriterion("Status not between", value1, value2, "status");
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andRecordTimeIsNull() {
-            addCriterion("record_time is null");
+        public Criteria andCreateTimeIsNull() {
+            addCriterion("CreateTime is null");
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andRecordTimeIsNotNull() {
-            addCriterion("record_time is not null");
+        public Criteria andCreateTimeIsNotNull() {
+            addCriterion("CreateTime is not null");
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andRecordTimeEqualTo(Date value) {
-            addCriterion("record_time =", value, "recordTime", false);
+        public Criteria andCreateTimeEqualTo(Date value) {
+            addCriterion("CreateTime =", value, "createTime", false);
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andRecordTimeNotEqualTo(Date value) {
-            addCriterion("record_time <>", value, "recordTime", false);
+        public Criteria andCreateTimeNotEqualTo(Date value) {
+            addCriterion("CreateTime <>", value, "createTime", false);
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andRecordTimeGreaterThan(Date value) {
-            addCriterion("record_time >", value, "recordTime", false);
+        public Criteria andCreateTimeGreaterThan(Date value) {
+            addCriterion("CreateTime >", value, "createTime", false);
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andRecordTimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("record_time >=", value, "recordTime", false);
+        public Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("CreateTime >=", value, "createTime", false);
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andRecordTimeLessThan(Date value) {
-            addCriterion("record_time <", value, "recordTime", false);
+        public Criteria andCreateTimeLessThan(Date value) {
+            addCriterion("CreateTime <", value, "createTime", false);
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andRecordTimeLessThanOrEqualTo(Date value) {
-            addCriterion("record_time <=", value, "recordTime", false);
+        public Criteria andCreateTimeLessThanOrEqualTo(Date value) {
+            addCriterion("CreateTime <=", value, "createTime", false);
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andRecordTimeIn(List<Date> values) {
-            addCriterion("record_time in", values, "recordTime", false);
+        public Criteria andCreateTimeIn(List<Date> values) {
+            addCriterion("CreateTime in", values, "createTime", false);
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andRecordTimeNotIn(List<Date> values) {
-            addCriterion("record_time not in", values, "recordTime", false);
+        public Criteria andCreateTimeNotIn(List<Date> values) {
+            addCriterion("CreateTime not in", values, "createTime", false);
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andRecordTimeBetween(Date value1, Date value2) {
-            addCriterion("record_time between", value1, value2, "recordTime");
+        public Criteria andCreateTimeBetween(Date value1, Date value2) {
+            addCriterion("CreateTime between", value1, value2, "createTime");
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andRecordTimeNotBetween(Date value1, Date value2) {
-            addCriterion("record_time not between", value1, value2, "recordTime");
+        public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
+            addCriterion("CreateTime not between", value1, value2, "createTime");
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeIsNull() {
+            addCriterion("LastModifyTime is null");
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeIsNotNull() {
+            addCriterion("LastModifyTime is not null");
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeEqualTo(Date value) {
+            addCriterion("LastModifyTime =", value, "lastModifyTime", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeNotEqualTo(Date value) {
+            addCriterion("LastModifyTime <>", value, "lastModifyTime", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeGreaterThan(Date value) {
+            addCriterion("LastModifyTime >", value, "lastModifyTime", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("LastModifyTime >=", value, "lastModifyTime", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeLessThan(Date value) {
+            addCriterion("LastModifyTime <", value, "lastModifyTime", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeLessThanOrEqualTo(Date value) {
+            addCriterion("LastModifyTime <=", value, "lastModifyTime", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeIn(List<Date> values) {
+            addCriterion("LastModifyTime in", values, "lastModifyTime", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeNotIn(List<Date> values) {
+            addCriterion("LastModifyTime not in", values, "lastModifyTime", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeBetween(Date value1, Date value2) {
+            addCriterion("LastModifyTime between", value1, value2, "lastModifyTime");
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeNotBetween(Date value1, Date value2) {
+            addCriterion("LastModifyTime not between", value1, value2, "lastModifyTime");
             return (Criteria) this;
         }
     }
 
     /**
-     *workshop
+     * 工作间表
+     *Workshop
      */
     public static class Criteria extends GeneratedCriteria {
 
@@ -583,7 +726,8 @@ public class WorkshopExample {
     }
 
     /**
-     * workshop
+     * 工作间表
+     * Workshop
      */
     public static class Criterion {
         private boolean isBinary;
@@ -697,7 +841,8 @@ public class WorkshopExample {
     }
 
     /**
-     *workshop
+     * 工作间表
+     *Workshop
      */
     public static class OrderBy {
         private List<OrderByPair> orderByPairs;
@@ -756,7 +901,8 @@ public class WorkshopExample {
     }
 
     /**
-     *workshop
+     * 工作间表
+     *Workshop
      */
     static class OrderByPair {
         private String fieldName;

@@ -2,10 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.focusmate.services.datasource.mapper.WorkshopMapper">
   <resultMap id="BaseResultMap" type="com.focusmate.services.datasource.entities.Workshop">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="station_id" jdbcType="INTEGER" property="stationId" />
-    <result column="status" jdbcType="VARCHAR" property="status" />
-    <result column="record_time" jdbcType="TIMESTAMP" property="recordTime" />
+    <id column="Id" jdbcType="INTEGER" property="id" />
+    <result column="StationId" jdbcType="INTEGER" property="stationId" />
+    <result column="Status" jdbcType="VARCHAR" property="status" />
+    <result column="CreateTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="LastModifyTime" jdbcType="TIMESTAMP" property="lastModifyTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -94,7 +95,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, station_id, status, record_time
+    Id, StationId, Status, CreateTime, LastModifyTime
   </sql>
   <select id="selectByExample" parameterType="com.focusmate.services.datasource.entities.WorkshopExample" resultMap="BaseResultMap">
     select
@@ -103,7 +104,7 @@
     </if>
     'true' as QUERYID,
     <include refid="Base_Column_List" />
-    from workshop
+    from Workshop
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -121,39 +122,42 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from workshop
-    where id = #{id,jdbcType=INTEGER}
+    from Workshop
+    where Id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from workshop
-    where id = #{id,jdbcType=INTEGER}
+    delete from Workshop
+    where Id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.focusmate.services.datasource.entities.WorkshopExample">
-    delete from workshop
+    delete from Workshop
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="com.focusmate.services.datasource.entities.Workshop">
-    insert into workshop (id, station_id, status, 
-      record_time)
+    insert into Workshop (Id, StationId, Status, 
+      CreateTime, LastModifyTime)
     values (#{id,jdbcType=INTEGER}, #{stationId,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, 
-      #{recordTime,jdbcType=TIMESTAMP})
+      #{createTime,jdbcType=TIMESTAMP}, #{lastModifyTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.focusmate.services.datasource.entities.Workshop">
-    insert into workshop
+    insert into Workshop
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
-        id,
+        Id,
       </if>
       <if test="stationId != null">
-        station_id,
+        StationId,
       </if>
       <if test="status != null">
-        status,
+        Status,
       </if>
-      <if test="recordTime != null">
-        record_time,
+      <if test="createTime != null">
+        CreateTime,
+      </if>
+      <if test="lastModifyTime != null">
+        LastModifyTime,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -166,31 +170,37 @@
       <if test="status != null">
         #{status,jdbcType=VARCHAR},
       </if>
-      <if test="recordTime != null">
-        #{recordTime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyTime != null">
+        #{lastModifyTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.focusmate.services.datasource.entities.WorkshopExample" resultType="java.lang.Integer">
-    select count(*) from workshop
+    select count(*) from Workshop
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update workshop
+    update Workshop
     <set>
       <if test="record.id != null">
-        id = #{record.id,jdbcType=INTEGER},
+        Id = #{record.id,jdbcType=INTEGER},
       </if>
       <if test="record.stationId != null">
-        station_id = #{record.stationId,jdbcType=INTEGER},
+        StationId = #{record.stationId,jdbcType=INTEGER},
       </if>
       <if test="record.status != null">
-        status = #{record.status,jdbcType=VARCHAR},
+        Status = #{record.status,jdbcType=VARCHAR},
       </if>
-      <if test="record.recordTime != null">
-        record_time = #{record.recordTime,jdbcType=TIMESTAMP},
+      <if test="record.createTime != null">
+        CreateTime = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastModifyTime != null">
+        LastModifyTime = #{record.lastModifyTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null">
@@ -198,35 +208,40 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update workshop
-    set id = #{record.id,jdbcType=INTEGER},
-      station_id = #{record.stationId,jdbcType=INTEGER},
-      status = #{record.status,jdbcType=VARCHAR},
-      record_time = #{record.recordTime,jdbcType=TIMESTAMP}
+    update Workshop
+    set Id = #{record.id,jdbcType=INTEGER},
+      StationId = #{record.stationId,jdbcType=INTEGER},
+      Status = #{record.status,jdbcType=VARCHAR},
+      CreateTime = #{record.createTime,jdbcType=TIMESTAMP},
+      LastModifyTime = #{record.lastModifyTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.focusmate.services.datasource.entities.Workshop">
-    update workshop
+    update Workshop
     <set>
       <if test="stationId != null">
-        station_id = #{stationId,jdbcType=INTEGER},
+        StationId = #{stationId,jdbcType=INTEGER},
       </if>
       <if test="status != null">
-        status = #{status,jdbcType=VARCHAR},
+        Status = #{status,jdbcType=VARCHAR},
       </if>
-      <if test="recordTime != null">
-        record_time = #{recordTime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        CreateTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyTime != null">
+        LastModifyTime = #{lastModifyTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where Id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.focusmate.services.datasource.entities.Workshop">
-    update workshop
-    set station_id = #{stationId,jdbcType=INTEGER},
-      status = #{status,jdbcType=VARCHAR},
-      record_time = #{recordTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
+    update Workshop
+    set StationId = #{stationId,jdbcType=INTEGER},
+      Status = #{status,jdbcType=VARCHAR},
+      CreateTime = #{createTime,jdbcType=TIMESTAMP},
+      LastModifyTime = #{lastModifyTime,jdbcType=TIMESTAMP}
+    where Id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

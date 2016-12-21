@@ -29,11 +29,10 @@ public class StationRepositoryImpl implements StationRepository {
     @Override
     public Station findByUserName(String username) {
         StationExample example = new StationExample();
-        example.createCriteria().andUserNameEqualTo(username);
+        example.createCriteria().andNameEqualTo(username);
 
         List<Station> stationList = mapper.selectByExample(example);
         if (CollectionUtils.isNotEmpty(stationList)) {
-
             return stationList.get(0);
         } else {
             return null;

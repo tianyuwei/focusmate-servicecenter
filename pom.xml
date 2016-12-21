@@ -15,6 +15,7 @@
         <module>servicecenter-common</module>
         <module>servicecenter-datasource</module>
         <module>servicecenter-server</module>
+        <module>servicecenter-wxpay</module>
     </modules>
     <packaging>pom</packaging>
 

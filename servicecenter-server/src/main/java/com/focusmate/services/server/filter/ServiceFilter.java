@@ -11,7 +11,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import com.focusmate.services.common.filter.BaseFilter;
-import com.focusmate.services.server.conf.ServerContacts;
+import com.focusmate.services.server.conf.ServerConstacts;
 
 /**
  * 全局请求过滤
@@ -23,7 +23,7 @@ import com.focusmate.services.server.conf.ServerContacts;
 public class ServiceFilter extends BaseFilter {
     @Override
     protected boolean toBeFiltered(HttpServletRequest req) {
-        if (req.getRequestURI().contains(ServerContacts.SERVICE_NAME)) {
+        if (req.getRequestURI().contains(ServerConstacts.SERVICE_NAME)) {
             return true;
         }
         return false;

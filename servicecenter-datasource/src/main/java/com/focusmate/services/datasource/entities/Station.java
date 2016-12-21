@@ -3,282 +3,290 @@ package com.focusmate.services.datasource.entities;
 import java.util.Date;
 
 /**
- * station
+ * 洗车站点表
+ * Station
  */
 public class Station {
     /**
-     * station.id
+     * 主键
+     * Station.Id
      */
     private Integer id;
 
     /**
-     * station.address
+     * 地址
+     * Station.Address
      */
     private String address;
 
     /**
-     * station.create_date
-     */
-    private Date createDate;
-
-    /**
-     * station.latitude
+     * 纬度
+     * Station.Latitude
      */
     private Float latitude;
 
     /**
-     * station.longitude
+     * 经度
+     * Station.Longitude
      */
     private Float longitude;
 
     /**
-     * station.password
-     */
-    private String password;
-
-    /**
-     * station.price
+     * 洗车价格
+     * Station.Price
      */
     private Integer price;
 
     /**
-     * station.short_name
+     * 站点名称
+     * Station.name
+     */
+    private String name;
+
+    /**
+     * 站点缩写
+     * Station.ShortName
      */
     private String shortName;
 
     /**
-     * station.status
+     * 站点状态
+     * Station.Status
      */
     private Integer status;
 
     /**
-     * station.user_name
-     */
-    private String userName;
-
-    /**
-     * station.command_type
+     * Station.CommandType
      */
     private Integer commandType;
 
     /**
-     * station.visit_date
+     * 创建时间
+     * Station.CreateTime
      */
-    private Date visitDate;
+    private Date createTime;
 
     /**
-     * station.id
+     * 修改时间
+     * Station.LastModifyTime
+     */
+    private Date lastModifyTime;
+
+    /**
+     * 主键
+     * Station.Id
      *
-     * @return the value of station.id
+     * @return the value of Station.Id
      */
     public Integer getId() {
         return id;
     }
 
     /**
-     * station.id
+     * 主键
+     * Station.Id
      *
-     * @param id the value for station.id
+     * @param id the value for Station.Id
      */
     public void setId(Integer id) {
         this.id = id;
     }
 
     /**
-     * station.address
+     * 地址
+     * Station.Address
      *
-     * @return the value of station.address
+     * @return the value of Station.Address
      */
     public String getAddress() {
         return address;
     }
 
     /**
-     * station.address
+     * 地址
+     * Station.Address
      *
-     * @param address the value for station.address
+     * @param address the value for Station.Address
      */
     public void setAddress(String address) {
         this.address = address == null ? null : address.trim();
     }
 
     /**
-     * station.create_date
+     * 纬度
+     * Station.Latitude
      *
-     * @return the value of station.create_date
-     */
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    /**
-     * station.create_date
-     *
-     * @param createDate the value for station.create_date
-     */
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
-
-    /**
-     * station.latitude
-     *
-     * @return the value of station.latitude
+     * @return the value of Station.Latitude
      */
     public Float getLatitude() {
         return latitude;
     }
 
     /**
-     * station.latitude
+     * 纬度
+     * Station.Latitude
      *
-     * @param latitude the value for station.latitude
+     * @param latitude the value for Station.Latitude
      */
     public void setLatitude(Float latitude) {
         this.latitude = latitude;
     }
 
     /**
-     * station.longitude
+     * 经度
+     * Station.Longitude
      *
-     * @return the value of station.longitude
+     * @return the value of Station.Longitude
      */
     public Float getLongitude() {
         return longitude;
     }
 
     /**
-     * station.longitude
+     * 经度
+     * Station.Longitude
      *
-     * @param longitude the value for station.longitude
+     * @param longitude the value for Station.Longitude
      */
     public void setLongitude(Float longitude) {
         this.longitude = longitude;
     }
 
     /**
-     * station.password
+     * 洗车价格
+     * Station.Price
      *
-     * @return the value of station.password
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     * station.password
-     *
-     * @param password the value for station.password
-     */
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
-    /**
-     * station.price
-     *
-     * @return the value of station.price
+     * @return the value of Station.Price
      */
     public Integer getPrice() {
         return price;
     }
 
     /**
-     * station.price
+     * 洗车价格
+     * Station.Price
      *
-     * @param price the value for station.price
+     * @param price the value for Station.Price
      */
     public void setPrice(Integer price) {
         this.price = price;
     }
 
     /**
-     * station.short_name
+     * 站点名称
+     * Station.name
      *
-     * @return the value of station.short_name
+     * @return the value of Station.name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * 站点名称
+     * Station.name
+     *
+     * @param name the value for Station.name
+     */
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    /**
+     * 站点缩写
+     * Station.ShortName
+     *
+     * @return the value of Station.ShortName
      */
     public String getShortName() {
         return shortName;
     }
 
     /**
-     * station.short_name
+     * 站点缩写
+     * Station.ShortName
      *
-     * @param shortName the value for station.short_name
+     * @param shortName the value for Station.ShortName
      */
     public void setShortName(String shortName) {
         this.shortName = shortName == null ? null : shortName.trim();
     }
 
     /**
-     * station.status
+     * 站点状态
+     * Station.Status
      *
-     * @return the value of station.status
+     * @return the value of Station.Status
      */
     public Integer getStatus() {
         return status;
     }
 
     /**
-     * station.status
+     * 站点状态
+     * Station.Status
      *
-     * @param status the value for station.status
+     * @param status the value for Station.Status
      */
     public void setStatus(Integer status) {
         this.status = status;
     }
 
     /**
-     * station.user_name
+     * Station.CommandType
      *
-     * @return the value of station.user_name
-     */
-    public String getUserName() {
-        return userName;
-    }
-
-    /**
-     * station.user_name
-     *
-     * @param userName the value for station.user_name
-     */
-    public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
-    }
-
-    /**
-     * station.command_type
-     *
-     * @return the value of station.command_type
+     * @return the value of Station.CommandType
      */
     public Integer getCommandType() {
         return commandType;
     }
 
     /**
-     * station.command_type
+     * Station.CommandType
      *
-     * @param commandType the value for station.command_type
+     * @param commandType the value for Station.CommandType
      */
     public void setCommandType(Integer commandType) {
         this.commandType = commandType;
     }
 
     /**
-     * station.visit_date
+     * 创建时间
+     * Station.CreateTime
      *
-     * @return the value of station.visit_date
+     * @return the value of Station.CreateTime
      */
-    public Date getVisitDate() {
-        return visitDate;
+    public Date getCreateTime() {
+        return createTime;
     }
 
     /**
-     * station.visit_date
+     * 创建时间
+     * Station.CreateTime
      *
-     * @param visitDate the value for station.visit_date
+     * @param createTime the value for Station.CreateTime
      */
-    public void setVisitDate(Date visitDate) {
-        this.visitDate = visitDate;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    /**
+     * 修改时间
+     * Station.LastModifyTime
+     *
+     * @return the value of Station.LastModifyTime
+     */
+    public Date getLastModifyTime() {
+        return lastModifyTime;
+    }
+
+    /**
+     * 修改时间
+     * Station.LastModifyTime
+     *
+     * @param lastModifyTime the value for Station.LastModifyTime
+     */
+    public void setLastModifyTime(Date lastModifyTime) {
+        this.lastModifyTime = lastModifyTime;
     }
 }

@@ -5,17 +5,16 @@
 package com.focusmate.services.server.mq;
 
 import org.springframework.jms.annotation.JmsListener;
-import org.springframework.stereotype.Component;
 
 /**
- *
+ * ActiveMQ 消息处理类
  * @author tianyuwei
  * @version id: Consumer, v 0.1 16/12/16 下午4:15 tianyuwei Exp $$
  */
-@Component
+//@Component
 public class MQConsumer {
 
-    @JmsListener(destination = "wx_transcation_queue")
+    @JmsListener(destination = "station_1_transaction")
     public void receiveQueue(String text) {
         System.out.println("consumer get:" + text);
     }

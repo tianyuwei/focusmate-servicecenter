@@ -3,98 +3,134 @@ package com.focusmate.services.datasource.entities;
 import java.util.Date;
 
 /**
- * workshop
+ * 工作间表
+ * Workshop
  */
 public class Workshop {
     /**
-     * workshop.id
+     * Workshop.Id
      */
     private Integer id;
 
     /**
-     * workshop.station_id
+     * 洗车站点ID号
+     * Workshop.StationId
      */
     private Integer stationId;
 
     /**
-     * workshop.status
+     * 工作间状态信息
+     * Workshop.Status
      */
     private String status;
 
     /**
-     * workshop.record_time
+     * 创建时间
+     * Workshop.CreateTime
      */
-    private Date recordTime;
+    private Date createTime;
 
     /**
-     * workshop.id
+     * 修改时间
+     * Workshop.LastModifyTime
+     */
+    private Date lastModifyTime;
+
+    /**
+     * Workshop.Id
      *
-     * @return the value of workshop.id
+     * @return the value of Workshop.Id
      */
     public Integer getId() {
         return id;
     }
 
     /**
-     * workshop.id
+     * Workshop.Id
      *
-     * @param id the value for workshop.id
+     * @param id the value for Workshop.Id
      */
     public void setId(Integer id) {
         this.id = id;
     }
 
     /**
-     * workshop.station_id
+     * 洗车站点ID号
+     * Workshop.StationId
      *
-     * @return the value of workshop.station_id
+     * @return the value of Workshop.StationId
      */
     public Integer getStationId() {
         return stationId;
     }
 
     /**
-     * workshop.station_id
+     * 洗车站点ID号
+     * Workshop.StationId
      *
-     * @param stationId the value for workshop.station_id
+     * @param stationId the value for Workshop.StationId
      */
     public void setStationId(Integer stationId) {
         this.stationId = stationId;
     }
 
     /**
-     * workshop.status
+     * 工作间状态信息
+     * Workshop.Status
      *
-     * @return the value of workshop.status
+     * @return the value of Workshop.Status
      */
     public String getStatus() {
         return status;
     }
 
     /**
-     * workshop.status
+     * 工作间状态信息
+     * Workshop.Status
      *
-     * @param status the value for workshop.status
+     * @param status the value for Workshop.Status
      */
     public void setStatus(String status) {
         this.status = status == null ? null : status.trim();
     }
 
     /**
-     * workshop.record_time
+     * 创建时间
+     * Workshop.CreateTime
      *
-     * @return the value of workshop.record_time
+     * @return the value of Workshop.CreateTime
      */
-    public Date getRecordTime() {
-        return recordTime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
     /**
-     * workshop.record_time
+     * 创建时间
+     * Workshop.CreateTime
      *
-     * @param recordTime the value for workshop.record_time
+     * @param createTime the value for Workshop.CreateTime
      */
-    public void setRecordTime(Date recordTime) {
-        this.recordTime = recordTime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    /**
+     * 修改时间
+     * Workshop.LastModifyTime
+     *
+     * @return the value of Workshop.LastModifyTime
+     */
+    public Date getLastModifyTime() {
+        return lastModifyTime;
+    }
+
+    /**
+     * 修改时间
+     * Workshop.LastModifyTime
+     *
+     * @param lastModifyTime the value for Workshop.LastModifyTime
+     */
+    public void setLastModifyTime(Date lastModifyTime) {
+        this.lastModifyTime = lastModifyTime;
     }
 }

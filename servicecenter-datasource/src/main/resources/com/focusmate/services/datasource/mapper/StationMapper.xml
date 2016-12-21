@@ -2,18 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.focusmate.services.datasource.mapper.StationMapper">
   <resultMap id="BaseResultMap" type="com.focusmate.services.datasource.entities.Station">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="address" jdbcType="VARCHAR" property="address" />
-    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
-    <result column="latitude" jdbcType="REAL" property="latitude" />
-    <result column="longitude" jdbcType="REAL" property="longitude" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="price" jdbcType="INTEGER" property="price" />
-    <result column="short_name" jdbcType="VARCHAR" property="shortName" />
-    <result column="status" jdbcType="INTEGER" property="status" />
-    <result column="user_name" jdbcType="VARCHAR" property="userName" />
-    <result column="command_type" jdbcType="INTEGER" property="commandType" />
-    <result column="visit_date" jdbcType="TIMESTAMP" property="visitDate" />
+    <id column="Id" jdbcType="INTEGER" property="id" />
+    <result column="Address" jdbcType="VARCHAR" property="address" />
+    <result column="Latitude" jdbcType="REAL" property="latitude" />
+    <result column="Longitude" jdbcType="REAL" property="longitude" />
+    <result column="Price" jdbcType="INTEGER" property="price" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="ShortName" jdbcType="VARCHAR" property="shortName" />
+    <result column="Status" jdbcType="INTEGER" property="status" />
+    <result column="CommandType" jdbcType="INTEGER" property="commandType" />
+    <result column="CreateTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="LastModifyTime" jdbcType="TIMESTAMP" property="lastModifyTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -102,8 +101,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, address, create_date, latitude, longitude, password, price, short_name, status, 
-    user_name, command_type, visit_date
+    Id, Address, Latitude, Longitude, Price, name, ShortName, Status, CommandType, CreateTime, 
+    LastModifyTime
   </sql>
   <select id="selectByExample" parameterType="com.focusmate.services.datasource.entities.StationExample" resultMap="BaseResultMap">
     select
@@ -112,7 +111,7 @@
     </if>
     'true' as QUERYID,
     <include refid="Base_Column_List" />
-    from station
+    from Station
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -130,69 +129,64 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from station
-    where id = #{id,jdbcType=INTEGER}
+    from Station
+    where Id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from station
-    where id = #{id,jdbcType=INTEGER}
+    delete from Station
+    where Id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.focusmate.services.datasource.entities.StationExample">
-    delete from station
+    delete from Station
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="com.focusmate.services.datasource.entities.Station">
-    insert into station (id, address, create_date, 
-      latitude, longitude, password, 
-      price, short_name, status, 
-      user_name, command_type, visit_date
-      )
-    values (#{id,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
-      #{latitude,jdbcType=REAL}, #{longitude,jdbcType=REAL}, #{password,jdbcType=VARCHAR}, 
-      #{price,jdbcType=INTEGER}, #{shortName,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
-      #{userName,jdbcType=VARCHAR}, #{commandType,jdbcType=INTEGER}, #{visitDate,jdbcType=TIMESTAMP}
-      )
+    insert into Station (Id, Address, Latitude, 
+      Longitude, Price, name, 
+      ShortName, Status, CommandType, 
+      CreateTime, LastModifyTime)
+    values (#{id,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{latitude,jdbcType=REAL}, 
+      #{longitude,jdbcType=REAL}, #{price,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{shortName,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{commandType,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastModifyTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.focusmate.services.datasource.entities.Station">
-    insert into station
+    insert into Station
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
-        id,
+        Id,
       </if>
       <if test="address != null">
-        address,
-      </if>
-      <if test="createDate != null">
-        create_date,
+        Address,
       </if>
       <if test="latitude != null">
-        latitude,
+        Latitude,
       </if>
       <if test="longitude != null">
-        longitude,
-      </if>
-      <if test="password != null">
-        password,
+        Longitude,
       </if>
       <if test="price != null">
-        price,
+        Price,
+      </if>
+      <if test="name != null">
+        name,
       </if>
       <if test="shortName != null">
-        short_name,
+        ShortName,
       </if>
       <if test="status != null">
-        status,
-      </if>
-      <if test="userName != null">
-        user_name,
+        Status,
       </if>
       <if test="commandType != null">
-        command_type,
+        CommandType,
       </if>
-      <if test="visitDate != null">
-        visit_date,
+      <if test="createTime != null">
+        CreateTime,
+      </if>
+      <if test="lastModifyTime != null">
+        LastModifyTime,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -202,20 +196,17 @@
       <if test="address != null">
         #{address,jdbcType=VARCHAR},
       </if>
-      <if test="createDate != null">
-        #{createDate,jdbcType=TIMESTAMP},
-      </if>
       <if test="latitude != null">
         #{latitude,jdbcType=REAL},
       </if>
       <if test="longitude != null">
         #{longitude,jdbcType=REAL},
       </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
-      </if>
       <if test="price != null">
         #{price,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
       </if>
       <if test="shortName != null">
         #{shortName,jdbcType=VARCHAR},
@@ -223,61 +214,58 @@
       <if test="status != null">
         #{status,jdbcType=INTEGER},
       </if>
-      <if test="userName != null">
-        #{userName,jdbcType=VARCHAR},
-      </if>
       <if test="commandType != null">
         #{commandType,jdbcType=INTEGER},
       </if>
-      <if test="visitDate != null">
-        #{visitDate,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyTime != null">
+        #{lastModifyTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.focusmate.services.datasource.entities.StationExample" resultType="java.lang.Integer">
-    select count(*) from station
+    select count(*) from Station
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update station
+    update Station
     <set>
       <if test="record.id != null">
-        id = #{record.id,jdbcType=INTEGER},
+        Id = #{record.id,jdbcType=INTEGER},
       </if>
       <if test="record.address != null">
-        address = #{record.address,jdbcType=VARCHAR},
-      </if>
-      <if test="record.createDate != null">
-        create_date = #{record.createDate,jdbcType=TIMESTAMP},
+        Address = #{record.address,jdbcType=VARCHAR},
       </if>
       <if test="record.latitude != null">
-        latitude = #{record.latitude,jdbcType=REAL},
+        Latitude = #{record.latitude,jdbcType=REAL},
       </if>
       <if test="record.longitude != null">
-        longitude = #{record.longitude,jdbcType=REAL},
-      </if>
-      <if test="record.password != null">
-        password = #{record.password,jdbcType=VARCHAR},
+        Longitude = #{record.longitude,jdbcType=REAL},
       </if>
       <if test="record.price != null">
-        price = #{record.price,jdbcType=INTEGER},
+        Price = #{record.price,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
       </if>
       <if test="record.shortName != null">
-        short_name = #{record.shortName,jdbcType=VARCHAR},
+        ShortName = #{record.shortName,jdbcType=VARCHAR},
       </if>
       <if test="record.status != null">
-        status = #{record.status,jdbcType=INTEGER},
-      </if>
-      <if test="record.userName != null">
-        user_name = #{record.userName,jdbcType=VARCHAR},
+        Status = #{record.status,jdbcType=INTEGER},
       </if>
       <if test="record.commandType != null">
-        command_type = #{record.commandType,jdbcType=INTEGER},
+        CommandType = #{record.commandType,jdbcType=INTEGER},
       </if>
-      <if test="record.visitDate != null">
-        visit_date = #{record.visitDate,jdbcType=TIMESTAMP},
+      <if test="record.createTime != null">
+        CreateTime = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastModifyTime != null">
+        LastModifyTime = #{record.lastModifyTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null">
@@ -285,75 +273,70 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update station
-    set id = #{record.id,jdbcType=INTEGER},
-      address = #{record.address,jdbcType=VARCHAR},
-      create_date = #{record.createDate,jdbcType=TIMESTAMP},
-      latitude = #{record.latitude,jdbcType=REAL},
-      longitude = #{record.longitude,jdbcType=REAL},
-      password = #{record.password,jdbcType=VARCHAR},
-      price = #{record.price,jdbcType=INTEGER},
-      short_name = #{record.shortName,jdbcType=VARCHAR},
-      status = #{record.status,jdbcType=INTEGER},
-      user_name = #{record.userName,jdbcType=VARCHAR},
-      command_type = #{record.commandType,jdbcType=INTEGER},
-      visit_date = #{record.visitDate,jdbcType=TIMESTAMP}
+    update Station
+    set Id = #{record.id,jdbcType=INTEGER},
+      Address = #{record.address,jdbcType=VARCHAR},
+      Latitude = #{record.latitude,jdbcType=REAL},
+      Longitude = #{record.longitude,jdbcType=REAL},
+      Price = #{record.price,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      ShortName = #{record.shortName,jdbcType=VARCHAR},
+      Status = #{record.status,jdbcType=INTEGER},
+      CommandType = #{record.commandType,jdbcType=INTEGER},
+      CreateTime = #{record.createTime,jdbcType=TIMESTAMP},
+      LastModifyTime = #{record.lastModifyTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.focusmate.services.datasource.entities.Station">
-    update station
+    update Station
     <set>
       <if test="address != null">
-        address = #{address,jdbcType=VARCHAR},
-      </if>
-      <if test="createDate != null">
-        create_date = #{createDate,jdbcType=TIMESTAMP},
+        Address = #{address,jdbcType=VARCHAR},
       </if>
       <if test="latitude != null">
-        latitude = #{latitude,jdbcType=REAL},
+        Latitude = #{latitude,jdbcType=REAL},
       </if>
       <if test="longitude != null">
-        longitude = #{longitude,jdbcType=REAL},
-      </if>
-      <if test="password != null">
-        password = #{password,jdbcType=VARCHAR},
+        Longitude = #{longitude,jdbcType=REAL},
       </if>
       <if test="price != null">
-        price = #{price,jdbcType=INTEGER},
+        Price = #{price,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="shortName != null">
-        short_name = #{shortName,jdbcType=VARCHAR},
+        ShortName = #{shortName,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
-        status = #{status,jdbcType=INTEGER},
-      </if>
-      <if test="userName != null">
-        user_name = #{userName,jdbcType=VARCHAR},
+        Status = #{status,jdbcType=INTEGER},
       </if>
       <if test="commandType != null">
-        command_type = #{commandType,jdbcType=INTEGER},
+        CommandType = #{commandType,jdbcType=INTEGER},
       </if>
-      <if test="visitDate != null">
-        visit_date = #{visitDate,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        CreateTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyTime != null">
+        LastModifyTime = #{lastModifyTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where Id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.focusmate.services.datasource.entities.Station">
-    update station
-    set address = #{address,jdbcType=VARCHAR},
-      create_date = #{createDate,jdbcType=TIMESTAMP},
-      latitude = #{latitude,jdbcType=REAL},
-      longitude = #{longitude,jdbcType=REAL},
-      password = #{password,jdbcType=VARCHAR},
-      price = #{price,jdbcType=INTEGER},
-      short_name = #{shortName,jdbcType=VARCHAR},
-      status = #{status,jdbcType=INTEGER},
-      user_name = #{userName,jdbcType=VARCHAR},
-      command_type = #{commandType,jdbcType=INTEGER},
-      visit_date = #{visitDate,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
+    update Station
+    set Address = #{address,jdbcType=VARCHAR},
+      Latitude = #{latitude,jdbcType=REAL},
+      Longitude = #{longitude,jdbcType=REAL},
+      Price = #{price,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      ShortName = #{shortName,jdbcType=VARCHAR},
+      Status = #{status,jdbcType=INTEGER},
+      CommandType = #{commandType,jdbcType=INTEGER},
+      CreateTime = #{createTime,jdbcType=TIMESTAMP},
+      LastModifyTime = #{lastModifyTime,jdbcType=TIMESTAMP}
+    where Id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

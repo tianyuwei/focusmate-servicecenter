@@ -6,7 +6,8 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * station
+ * 洗车站点表
+ * Station
  */
 public class StationExample {
     // 顺序排序
@@ -15,141 +16,149 @@ public class StationExample {
     // 倒序排序
     public static final String ORDERBYDIRECTION_DESC = "desc";
 
-    public static final String FIELD_ID = "id";
+    // 主键
+    public static final String FIELD_ID = "Id";
 
-    public static final String FIELD_ADDRESS = "address";
+    // 地址
+    public static final String FIELD_ADDRESS = "Address";
 
-    public static final String FIELD_CREATE_DATE = "create_date";
+    // 纬度
+    public static final String FIELD_LATITUDE = "Latitude";
 
-    public static final String FIELD_LATITUDE = "latitude";
+    // 经度
+    public static final String FIELD_LONGITUDE = "Longitude";
 
-    public static final String FIELD_LONGITUDE = "longitude";
+    // 洗车价格
+    public static final String FIELD_PRICE = "Price";
 
-    public static final String FIELD_PASSWORD = "password";
+    // 站点名称
+    public static final String FIELD_NAME = "name";
 
-    public static final String FIELD_PRICE = "price";
+    // 站点缩写
+    public static final String FIELD_SHORTNAME = "ShortName";
 
-    public static final String FIELD_SHORT_NAME = "short_name";
+    // 站点状态
+    public static final String FIELD_STATUS = "Status";
 
-    public static final String FIELD_STATUS = "status";
+    public static final String FIELD_COMMANDTYPE = "CommandType";
 
-    public static final String FIELD_USER_NAME = "user_name";
+    // 创建时间
+    public static final String FIELD_CREATETIME = "CreateTime";
 
-    public static final String FIELD_COMMAND_TYPE = "command_type";
-
-    public static final String FIELD_VISIT_DATE = "visit_date";
+    // 修改时间
+    public static final String FIELD_LASTMODIFYTIME = "LastModifyTime";
 
     /**
-     * station
+     * Station
      */
     protected Integer offset;
 
     /**
-     * station
+     * Station
      */
     protected Integer size;
 
     /**
-     * station
+     * Station
      */
     protected String orderByClause;
 
     /**
-     * station
+     * Station
      */
     protected boolean distinct;
 
     /**
-     * station
+     * Station
      */
     protected List<Criteria> oredCriteria;
 
     /**
-     * station
+     * Station
      */
     public StationExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
     /**
-     * station
+     * Station
      */
     public void setOrderByClause(String orderByClause) {
         this.orderByClause = orderByClause;
     }
 
     /**
-     * station
+     * Station
      */
     public void setOrderByClause(OrderBy orderBy) {
         this.orderByClause = orderBy.toString();
     }
 
     /**
-     * station
+     * Station
      */
     public String getOrderByClause() {
         return orderByClause;
     }
 
     /**
-     * station
+     * Station
      */
     public void setDistinct(boolean distinct) {
         this.distinct = distinct;
     }
 
     /**
-     * station
+     * Station
      */
     public boolean isDistinct() {
         return distinct;
     }
 
     /**
-     * station
+     * Station
      */
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
 
     /**
-     * station
+     * Station
      */
     public Integer getOffset() {
         return offset;
     }
 
     /**
-     * station
+     * Station
      */
     public void setSize(Integer size) {
         this.size = size;
     }
 
     /**
-     * station
+     * Station
      */
     public Integer getSize() {
         return size;
     }
 
     /**
-     * station
+     * Station
      */
     public List<Criteria> getOredCriteria() {
         return oredCriteria;
     }
 
     /**
-     * station
+     * Station
      */
     public void or(Criteria criteria) {
         oredCriteria.add(criteria);
     }
 
     /**
-     * station
+     * Station
      */
     public Criteria or() {
         Criteria criteria = createCriteriaInternal();
@@ -158,7 +167,7 @@ public class StationExample {
     }
 
     /**
-     * station
+     * Station
      */
     public Criteria createCriteria() {
         Criteria criteria = createCriteriaInternal();
@@ -169,7 +178,7 @@ public class StationExample {
     }
 
     /**
-     * station
+     * Station
      */
     protected Criteria createCriteriaInternal() {
         Criteria criteria = new Criteria();
@@ -177,7 +186,7 @@ public class StationExample {
     }
 
     /**
-     * station
+     * Station
      */
     public void clear() {
         oredCriteria.clear();
@@ -186,7 +195,8 @@ public class StationExample {
     }
 
     /**
-     * station
+     * 洗车站点表
+     * Station
      */
     protected abstract static class GeneratedCriteria {
         protected List<Criterion> criteria;
@@ -238,1072 +248,1101 @@ public class StationExample {
         }
 
         /**
+         * 主键
          */
         public Criteria andIdIsNull() {
-            addCriterion("id is null");
+            addCriterion("Id is null");
             return (Criteria) this;
         }
 
         /**
+         * 主键
          */
         public Criteria andIdIsNotNull() {
-            addCriterion("id is not null");
+            addCriterion("Id is not null");
             return (Criteria) this;
         }
 
         /**
+         * 主键
          */
         public Criteria andIdEqualTo(Integer value) {
-            addCriterion("id =", value, "id", false);
+            addCriterion("Id =", value, "id", false);
             return (Criteria) this;
         }
 
         /**
+         * 主键
          */
         public Criteria andIdNotEqualTo(Integer value) {
-            addCriterion("id <>", value, "id", false);
+            addCriterion("Id <>", value, "id", false);
             return (Criteria) this;
         }
 
         /**
+         * 主键
          */
         public Criteria andIdGreaterThan(Integer value) {
-            addCriterion("id >", value, "id", false);
+            addCriterion("Id >", value, "id", false);
             return (Criteria) this;
         }
 
         /**
+         * 主键
          */
         public Criteria andIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("id >=", value, "id", false);
+            addCriterion("Id >=", value, "id", false);
             return (Criteria) this;
         }
 
         /**
+         * 主键
          */
         public Criteria andIdLessThan(Integer value) {
-            addCriterion("id <", value, "id", false);
+            addCriterion("Id <", value, "id", false);
             return (Criteria) this;
         }
 
         /**
+         * 主键
          */
         public Criteria andIdLessThanOrEqualTo(Integer value) {
-            addCriterion("id <=", value, "id", false);
+            addCriterion("Id <=", value, "id", false);
             return (Criteria) this;
         }
 
         /**
+         * 主键
          */
         public Criteria andIdIn(List<Integer> values) {
-            addCriterion("id in", values, "id", false);
+            addCriterion("Id in", values, "id", false);
             return (Criteria) this;
         }
 
         /**
+         * 主键
          */
         public Criteria andIdNotIn(List<Integer> values) {
-            addCriterion("id not in", values, "id", false);
+            addCriterion("Id not in", values, "id", false);
             return (Criteria) this;
         }
 
         /**
+         * 主键
          */
         public Criteria andIdBetween(Integer value1, Integer value2) {
-            addCriterion("id between", value1, value2, "id");
+            addCriterion("Id between", value1, value2, "id");
             return (Criteria) this;
         }
 
         /**
+         * 主键
          */
         public Criteria andIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("id not between", value1, value2, "id");
+            addCriterion("Id not between", value1, value2, "id");
             return (Criteria) this;
         }
 
         /**
+         * 地址
          */
         public Criteria andAddressIsNull() {
-            addCriterion("address is null");
+            addCriterion("Address is null");
             return (Criteria) this;
         }
 
         /**
+         * 地址
          */
         public Criteria andAddressIsNotNull() {
-            addCriterion("address is not null");
+            addCriterion("Address is not null");
             return (Criteria) this;
         }
 
         /**
+         * 地址
          */
         public Criteria andAddressEqualTo(String value) {
-            addCriterion("address =", value, "address", false);
+            addCriterion("Address =", value, "address", false);
             return (Criteria) this;
         }
 
         /**
+         * 地址
          */
         public Criteria andAddressNotEqualTo(String value) {
-            addCriterion("address <>", value, "address", false);
+            addCriterion("Address <>", value, "address", false);
             return (Criteria) this;
         }
 
         /**
+         * 地址
          */
         public Criteria andAddressGreaterThan(String value) {
-            addCriterion("address >", value, "address", false);
+            addCriterion("Address >", value, "address", false);
             return (Criteria) this;
         }
 
         /**
+         * 地址
          */
         public Criteria andAddressGreaterThanOrEqualTo(String value) {
-            addCriterion("address >=", value, "address", false);
+            addCriterion("Address >=", value, "address", false);
             return (Criteria) this;
         }
 
         /**
+         * 地址
          */
         public Criteria andAddressLessThan(String value) {
-            addCriterion("address <", value, "address", false);
+            addCriterion("Address <", value, "address", false);
             return (Criteria) this;
         }
 
         /**
+         * 地址
          */
         public Criteria andAddressLessThanOrEqualTo(String value) {
-            addCriterion("address <=", value, "address", false);
+            addCriterion("Address <=", value, "address", false);
             return (Criteria) this;
         }
 
         /**
+         * 地址
          */
         public Criteria andAddressLike(String value) {
-            addCriterion("address like", value, "address", false);
+            addCriterion("Address like", value, "address", false);
             return (Criteria) this;
         }
 
         /**
+         * 地址
          */
         public Criteria andAddressNotLike(String value) {
-            addCriterion("address not like", value, "address", false);
+            addCriterion("Address not like", value, "address", false);
             return (Criteria) this;
         }
 
         /**
+         * 地址
          */
         public Criteria andAddressIn(List<String> values) {
-            addCriterion("address in", values, "address", false);
+            addCriterion("Address in", values, "address", false);
             return (Criteria) this;
         }
 
         /**
+         * 地址
          */
         public Criteria andAddressNotIn(List<String> values) {
-            addCriterion("address not in", values, "address", false);
+            addCriterion("Address not in", values, "address", false);
             return (Criteria) this;
         }
 
         /**
+         * 地址
          */
         public Criteria andAddressBetween(String value1, String value2) {
-            addCriterion("address between", value1, value2, "address");
+            addCriterion("Address between", value1, value2, "address");
             return (Criteria) this;
         }
 
         /**
+         * 地址
          */
         public Criteria andAddressNotBetween(String value1, String value2) {
-            addCriterion("address not between", value1, value2, "address");
+            addCriterion("Address not between", value1, value2, "address");
             return (Criteria) this;
         }
 
         /**
-         */
-        public Criteria andCreateDateIsNull() {
-            addCriterion("create_date is null");
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andCreateDateIsNotNull() {
-            addCriterion("create_date is not null");
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andCreateDateEqualTo(Date value) {
-            addCriterion("create_date =", value, "createDate", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andCreateDateNotEqualTo(Date value) {
-            addCriterion("create_date <>", value, "createDate", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andCreateDateGreaterThan(Date value) {
-            addCriterion("create_date >", value, "createDate", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andCreateDateGreaterThanOrEqualTo(Date value) {
-            addCriterion("create_date >=", value, "createDate", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andCreateDateLessThan(Date value) {
-            addCriterion("create_date <", value, "createDate", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andCreateDateLessThanOrEqualTo(Date value) {
-            addCriterion("create_date <=", value, "createDate", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andCreateDateIn(List<Date> values) {
-            addCriterion("create_date in", values, "createDate", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andCreateDateNotIn(List<Date> values) {
-            addCriterion("create_date not in", values, "createDate", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andCreateDateBetween(Date value1, Date value2) {
-            addCriterion("create_date between", value1, value2, "createDate");
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andCreateDateNotBetween(Date value1, Date value2) {
-            addCriterion("create_date not between", value1, value2, "createDate");
-            return (Criteria) this;
-        }
-
-        /**
+         * 纬度
          */
         public Criteria andLatitudeIsNull() {
-            addCriterion("latitude is null");
+            addCriterion("Latitude is null");
             return (Criteria) this;
         }
 
         /**
+         * 纬度
          */
         public Criteria andLatitudeIsNotNull() {
-            addCriterion("latitude is not null");
+            addCriterion("Latitude is not null");
             return (Criteria) this;
         }
 
         /**
+         * 纬度
          */
         public Criteria andLatitudeEqualTo(Float value) {
-            addCriterion("latitude =", value, "latitude", false);
+            addCriterion("Latitude =", value, "latitude", false);
             return (Criteria) this;
         }
 
         /**
+         * 纬度
          */
         public Criteria andLatitudeNotEqualTo(Float value) {
-            addCriterion("latitude <>", value, "latitude", false);
+            addCriterion("Latitude <>", value, "latitude", false);
             return (Criteria) this;
         }
 
         /**
+         * 纬度
          */
         public Criteria andLatitudeGreaterThan(Float value) {
-            addCriterion("latitude >", value, "latitude", false);
+            addCriterion("Latitude >", value, "latitude", false);
             return (Criteria) this;
         }
 
         /**
+         * 纬度
          */
         public Criteria andLatitudeGreaterThanOrEqualTo(Float value) {
-            addCriterion("latitude >=", value, "latitude", false);
+            addCriterion("Latitude >=", value, "latitude", false);
             return (Criteria) this;
         }
 
         /**
+         * 纬度
          */
         public Criteria andLatitudeLessThan(Float value) {
-            addCriterion("latitude <", value, "latitude", false);
+            addCriterion("Latitude <", value, "latitude", false);
             return (Criteria) this;
         }
 
         /**
+         * 纬度
          */
         public Criteria andLatitudeLessThanOrEqualTo(Float value) {
-            addCriterion("latitude <=", value, "latitude", false);
+            addCriterion("Latitude <=", value, "latitude", false);
             return (Criteria) this;
         }
 
         /**
+         * 纬度
          */
         public Criteria andLatitudeIn(List<Float> values) {
-            addCriterion("latitude in", values, "latitude", false);
+            addCriterion("Latitude in", values, "latitude", false);
             return (Criteria) this;
         }
 
         /**
+         * 纬度
          */
         public Criteria andLatitudeNotIn(List<Float> values) {
-            addCriterion("latitude not in", values, "latitude", false);
+            addCriterion("Latitude not in", values, "latitude", false);
             return (Criteria) this;
         }
 
         /**
+         * 纬度
          */
         public Criteria andLatitudeBetween(Float value1, Float value2) {
-            addCriterion("latitude between", value1, value2, "latitude");
+            addCriterion("Latitude between", value1, value2, "latitude");
             return (Criteria) this;
         }
 
         /**
+         * 纬度
          */
         public Criteria andLatitudeNotBetween(Float value1, Float value2) {
-            addCriterion("latitude not between", value1, value2, "latitude");
+            addCriterion("Latitude not between", value1, value2, "latitude");
             return (Criteria) this;
         }
 
         /**
+         * 经度
          */
         public Criteria andLongitudeIsNull() {
-            addCriterion("longitude is null");
+            addCriterion("Longitude is null");
             return (Criteria) this;
         }
 
         /**
+         * 经度
          */
         public Criteria andLongitudeIsNotNull() {
-            addCriterion("longitude is not null");
+            addCriterion("Longitude is not null");
             return (Criteria) this;
         }
 
         /**
+         * 经度
          */
         public Criteria andLongitudeEqualTo(Float value) {
-            addCriterion("longitude =", value, "longitude", false);
+            addCriterion("Longitude =", value, "longitude", false);
             return (Criteria) this;
         }
 
         /**
+         * 经度
          */
         public Criteria andLongitudeNotEqualTo(Float value) {
-            addCriterion("longitude <>", value, "longitude", false);
+            addCriterion("Longitude <>", value, "longitude", false);
             return (Criteria) this;
         }
 
         /**
+         * 经度
          */
         public Criteria andLongitudeGreaterThan(Float value) {
-            addCriterion("longitude >", value, "longitude", false);
+            addCriterion("Longitude >", value, "longitude", false);
             return (Criteria) this;
         }
 
         /**
+         * 经度
          */
         public Criteria andLongitudeGreaterThanOrEqualTo(Float value) {
-            addCriterion("longitude >=", value, "longitude", false);
+            addCriterion("Longitude >=", value, "longitude", false);
             return (Criteria) this;
         }
 
         /**
+         * 经度
          */
         public Criteria andLongitudeLessThan(Float value) {
-            addCriterion("longitude <", value, "longitude", false);
+            addCriterion("Longitude <", value, "longitude", false);
             return (Criteria) this;
         }
 
         /**
+         * 经度
          */
         public Criteria andLongitudeLessThanOrEqualTo(Float value) {
-            addCriterion("longitude <=", value, "longitude", false);
+            addCriterion("Longitude <=", value, "longitude", false);
             return (Criteria) this;
         }
 
         /**
+         * 经度
          */
         public Criteria andLongitudeIn(List<Float> values) {
-            addCriterion("longitude in", values, "longitude", false);
+            addCriterion("Longitude in", values, "longitude", false);
             return (Criteria) this;
         }
 
         /**
+         * 经度
          */
         public Criteria andLongitudeNotIn(List<Float> values) {
-            addCriterion("longitude not in", values, "longitude", false);
+            addCriterion("Longitude not in", values, "longitude", false);
             return (Criteria) this;
         }
 
         /**
+         * 经度
          */
         public Criteria andLongitudeBetween(Float value1, Float value2) {
-            addCriterion("longitude between", value1, value2, "longitude");
+            addCriterion("Longitude between", value1, value2, "longitude");
             return (Criteria) this;
         }
 
         /**
+         * 经度
          */
         public Criteria andLongitudeNotBetween(Float value1, Float value2) {
-            addCriterion("longitude not between", value1, value2, "longitude");
+            addCriterion("Longitude not between", value1, value2, "longitude");
             return (Criteria) this;
         }
 
         /**
-         */
-        public Criteria andPasswordIsNull() {
-            addCriterion("password is null");
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andPasswordIsNotNull() {
-            addCriterion("password is not null");
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andPasswordEqualTo(String value) {
-            addCriterion("password =", value, "password", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andPasswordNotEqualTo(String value) {
-            addCriterion("password <>", value, "password", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andPasswordGreaterThan(String value) {
-            addCriterion("password >", value, "password", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andPasswordGreaterThanOrEqualTo(String value) {
-            addCriterion("password >=", value, "password", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andPasswordLessThan(String value) {
-            addCriterion("password <", value, "password", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andPasswordLessThanOrEqualTo(String value) {
-            addCriterion("password <=", value, "password", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andPasswordLike(String value) {
-            addCriterion("password like", value, "password", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andPasswordNotLike(String value) {
-            addCriterion("password not like", value, "password", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andPasswordIn(List<String> values) {
-            addCriterion("password in", values, "password", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andPasswordNotIn(List<String> values) {
-            addCriterion("password not in", values, "password", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andPasswordBetween(String value1, String value2) {
-            addCriterion("password between", value1, value2, "password");
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andPasswordNotBetween(String value1, String value2) {
-            addCriterion("password not between", value1, value2, "password");
-            return (Criteria) this;
-        }
-
-        /**
+         * 洗车价格
          */
         public Criteria andPriceIsNull() {
-            addCriterion("price is null");
+            addCriterion("Price is null");
             return (Criteria) this;
         }
 
         /**
+         * 洗车价格
          */
         public Criteria andPriceIsNotNull() {
-            addCriterion("price is not null");
+            addCriterion("Price is not null");
             return (Criteria) this;
         }
 
         /**
+         * 洗车价格
          */
         public Criteria andPriceEqualTo(Integer value) {
-            addCriterion("price =", value, "price", false);
+            addCriterion("Price =", value, "price", false);
             return (Criteria) this;
         }
 
         /**
+         * 洗车价格
          */
         public Criteria andPriceNotEqualTo(Integer value) {
-            addCriterion("price <>", value, "price", false);
+            addCriterion("Price <>", value, "price", false);
             return (Criteria) this;
         }
 
         /**
+         * 洗车价格
          */
         public Criteria andPriceGreaterThan(Integer value) {
-            addCriterion("price >", value, "price", false);
+            addCriterion("Price >", value, "price", false);
             return (Criteria) this;
         }
 
         /**
+         * 洗车价格
          */
         public Criteria andPriceGreaterThanOrEqualTo(Integer value) {
-            addCriterion("price >=", value, "price", false);
+            addCriterion("Price >=", value, "price", false);
             return (Criteria) this;
         }
 
         /**
+         * 洗车价格
          */
         public Criteria andPriceLessThan(Integer value) {
-            addCriterion("price <", value, "price", false);
+            addCriterion("Price <", value, "price", false);
             return (Criteria) this;
         }
 
         /**
+         * 洗车价格
          */
         public Criteria andPriceLessThanOrEqualTo(Integer value) {
-            addCriterion("price <=", value, "price", false);
+            addCriterion("Price <=", value, "price", false);
             return (Criteria) this;
         }
 
         /**
+         * 洗车价格
          */
         public Criteria andPriceIn(List<Integer> values) {
-            addCriterion("price in", values, "price", false);
+            addCriterion("Price in", values, "price", false);
             return (Criteria) this;
         }
 
         /**
+         * 洗车价格
          */
         public Criteria andPriceNotIn(List<Integer> values) {
-            addCriterion("price not in", values, "price", false);
+            addCriterion("Price not in", values, "price", false);
             return (Criteria) this;
         }
 
         /**
+         * 洗车价格
          */
         public Criteria andPriceBetween(Integer value1, Integer value2) {
-            addCriterion("price between", value1, value2, "price");
+            addCriterion("Price between", value1, value2, "price");
             return (Criteria) this;
         }
 
         /**
+         * 洗车价格
          */
         public Criteria andPriceNotBetween(Integer value1, Integer value2) {
-            addCriterion("price not between", value1, value2, "price");
+            addCriterion("Price not between", value1, value2, "price");
             return (Criteria) this;
         }
 
         /**
+         * 站点名称
+         */
+        public Criteria andNameIsNull() {
+            addCriterion("name is null");
+            return (Criteria) this;
+        }
+
+        /**
+         * 站点名称
+         */
+        public Criteria andNameIsNotNull() {
+            addCriterion("name is not null");
+            return (Criteria) this;
+        }
+
+        /**
+         * 站点名称
+         */
+        public Criteria andNameEqualTo(String value) {
+            addCriterion("name =", value, "name", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 站点名称
+         */
+        public Criteria andNameNotEqualTo(String value) {
+            addCriterion("name <>", value, "name", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 站点名称
+         */
+        public Criteria andNameGreaterThan(String value) {
+            addCriterion("name >", value, "name", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 站点名称
+         */
+        public Criteria andNameGreaterThanOrEqualTo(String value) {
+            addCriterion("name >=", value, "name", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 站点名称
+         */
+        public Criteria andNameLessThan(String value) {
+            addCriterion("name <", value, "name", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 站点名称
+         */
+        public Criteria andNameLessThanOrEqualTo(String value) {
+            addCriterion("name <=", value, "name", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 站点名称
+         */
+        public Criteria andNameLike(String value) {
+            addCriterion("name like", value, "name", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 站点名称
+         */
+        public Criteria andNameNotLike(String value) {
+            addCriterion("name not like", value, "name", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 站点名称
+         */
+        public Criteria andNameIn(List<String> values) {
+            addCriterion("name in", values, "name", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 站点名称
+         */
+        public Criteria andNameNotIn(List<String> values) {
+            addCriterion("name not in", values, "name", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 站点名称
+         */
+        public Criteria andNameBetween(String value1, String value2) {
+            addCriterion("name between", value1, value2, "name");
+            return (Criteria) this;
+        }
+
+        /**
+         * 站点名称
+         */
+        public Criteria andNameNotBetween(String value1, String value2) {
+            addCriterion("name not between", value1, value2, "name");
+            return (Criteria) this;
+        }
+
+        /**
+         * 站点缩写
          */
         public Criteria andShortNameIsNull() {
-            addCriterion("short_name is null");
+            addCriterion("ShortName is null");
             return (Criteria) this;
         }
 
         /**
+         * 站点缩写
          */
         public Criteria andShortNameIsNotNull() {
-            addCriterion("short_name is not null");
+            addCriterion("ShortName is not null");
             return (Criteria) this;
         }
 
         /**
+         * 站点缩写
          */
         public Criteria andShortNameEqualTo(String value) {
-            addCriterion("short_name =", value, "shortName", false);
+            addCriterion("ShortName =", value, "shortName", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点缩写
          */
         public Criteria andShortNameNotEqualTo(String value) {
-            addCriterion("short_name <>", value, "shortName", false);
+            addCriterion("ShortName <>", value, "shortName", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点缩写
          */
         public Criteria andShortNameGreaterThan(String value) {
-            addCriterion("short_name >", value, "shortName", false);
+            addCriterion("ShortName >", value, "shortName", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点缩写
          */
         public Criteria andShortNameGreaterThanOrEqualTo(String value) {
-            addCriterion("short_name >=", value, "shortName", false);
+            addCriterion("ShortName >=", value, "shortName", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点缩写
          */
         public Criteria andShortNameLessThan(String value) {
-            addCriterion("short_name <", value, "shortName", false);
+            addCriterion("ShortName <", value, "shortName", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点缩写
          */
         public Criteria andShortNameLessThanOrEqualTo(String value) {
-            addCriterion("short_name <=", value, "shortName", false);
+            addCriterion("ShortName <=", value, "shortName", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点缩写
          */
         public Criteria andShortNameLike(String value) {
-            addCriterion("short_name like", value, "shortName", false);
+            addCriterion("ShortName like", value, "shortName", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点缩写
          */
         public Criteria andShortNameNotLike(String value) {
-            addCriterion("short_name not like", value, "shortName", false);
+            addCriterion("ShortName not like", value, "shortName", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点缩写
          */
         public Criteria andShortNameIn(List<String> values) {
-            addCriterion("short_name in", values, "shortName", false);
+            addCriterion("ShortName in", values, "shortName", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点缩写
          */
         public Criteria andShortNameNotIn(List<String> values) {
-            addCriterion("short_name not in", values, "shortName", false);
+            addCriterion("ShortName not in", values, "shortName", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点缩写
          */
         public Criteria andShortNameBetween(String value1, String value2) {
-            addCriterion("short_name between", value1, value2, "shortName");
+            addCriterion("ShortName between", value1, value2, "shortName");
             return (Criteria) this;
         }
 
         /**
+         * 站点缩写
          */
         public Criteria andShortNameNotBetween(String value1, String value2) {
-            addCriterion("short_name not between", value1, value2, "shortName");
+            addCriterion("ShortName not between", value1, value2, "shortName");
             return (Criteria) this;
         }
 
         /**
+         * 站点状态
          */
         public Criteria andStatusIsNull() {
-            addCriterion("status is null");
+            addCriterion("Status is null");
             return (Criteria) this;
         }
 
         /**
+         * 站点状态
          */
         public Criteria andStatusIsNotNull() {
-            addCriterion("status is not null");
+            addCriterion("Status is not null");
             return (Criteria) this;
         }
 
         /**
+         * 站点状态
          */
         public Criteria andStatusEqualTo(Integer value) {
-            addCriterion("status =", value, "status", false);
+            addCriterion("Status =", value, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点状态
          */
         public Criteria andStatusNotEqualTo(Integer value) {
-            addCriterion("status <>", value, "status", false);
+            addCriterion("Status <>", value, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点状态
          */
         public Criteria andStatusGreaterThan(Integer value) {
-            addCriterion("status >", value, "status", false);
+            addCriterion("Status >", value, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点状态
          */
         public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
-            addCriterion("status >=", value, "status", false);
+            addCriterion("Status >=", value, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点状态
          */
         public Criteria andStatusLessThan(Integer value) {
-            addCriterion("status <", value, "status", false);
+            addCriterion("Status <", value, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点状态
          */
         public Criteria andStatusLessThanOrEqualTo(Integer value) {
-            addCriterion("status <=", value, "status", false);
+            addCriterion("Status <=", value, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点状态
          */
         public Criteria andStatusIn(List<Integer> values) {
-            addCriterion("status in", values, "status", false);
+            addCriterion("Status in", values, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点状态
          */
         public Criteria andStatusNotIn(List<Integer> values) {
-            addCriterion("status not in", values, "status", false);
+            addCriterion("Status not in", values, "status", false);
             return (Criteria) this;
         }
 
         /**
+         * 站点状态
          */
         public Criteria andStatusBetween(Integer value1, Integer value2) {
-            addCriterion("status between", value1, value2, "status");
+            addCriterion("Status between", value1, value2, "status");
             return (Criteria) this;
         }
 
         /**
+         * 站点状态
          */
         public Criteria andStatusNotBetween(Integer value1, Integer value2) {
-            addCriterion("status not between", value1, value2, "status");
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andUserNameIsNull() {
-            addCriterion("user_name is null");
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andUserNameIsNotNull() {
-            addCriterion("user_name is not null");
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andUserNameEqualTo(String value) {
-            addCriterion("user_name =", value, "userName", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andUserNameNotEqualTo(String value) {
-            addCriterion("user_name <>", value, "userName", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andUserNameGreaterThan(String value) {
-            addCriterion("user_name >", value, "userName", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andUserNameGreaterThanOrEqualTo(String value) {
-            addCriterion("user_name >=", value, "userName", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andUserNameLessThan(String value) {
-            addCriterion("user_name <", value, "userName", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andUserNameLessThanOrEqualTo(String value) {
-            addCriterion("user_name <=", value, "userName", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andUserNameLike(String value) {
-            addCriterion("user_name like", value, "userName", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andUserNameNotLike(String value) {
-            addCriterion("user_name not like", value, "userName", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andUserNameIn(List<String> values) {
-            addCriterion("user_name in", values, "userName", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andUserNameNotIn(List<String> values) {
-            addCriterion("user_name not in", values, "userName", false);
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andUserNameBetween(String value1, String value2) {
-            addCriterion("user_name between", value1, value2, "userName");
-            return (Criteria) this;
-        }
-
-        /**
-         */
-        public Criteria andUserNameNotBetween(String value1, String value2) {
-            addCriterion("user_name not between", value1, value2, "userName");
+            addCriterion("Status not between", value1, value2, "status");
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andCommandTypeIsNull() {
-            addCriterion("command_type is null");
+            addCriterion("CommandType is null");
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andCommandTypeIsNotNull() {
-            addCriterion("command_type is not null");
+            addCriterion("CommandType is not null");
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andCommandTypeEqualTo(Integer value) {
-            addCriterion("command_type =", value, "commandType", false);
+            addCriterion("CommandType =", value, "commandType", false);
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andCommandTypeNotEqualTo(Integer value) {
-            addCriterion("command_type <>", value, "commandType", false);
+            addCriterion("CommandType <>", value, "commandType", false);
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andCommandTypeGreaterThan(Integer value) {
-            addCriterion("command_type >", value, "commandType", false);
+            addCriterion("CommandType >", value, "commandType", false);
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andCommandTypeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("command_type >=", value, "commandType", false);
+            addCriterion("CommandType >=", value, "commandType", false);
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andCommandTypeLessThan(Integer value) {
-            addCriterion("command_type <", value, "commandType", false);
+            addCriterion("CommandType <", value, "commandType", false);
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andCommandTypeLessThanOrEqualTo(Integer value) {
-            addCriterion("command_type <=", value, "commandType", false);
+            addCriterion("CommandType <=", value, "commandType", false);
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andCommandTypeIn(List<Integer> values) {
-            addCriterion("command_type in", values, "commandType", false);
+            addCriterion("CommandType in", values, "commandType", false);
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andCommandTypeNotIn(List<Integer> values) {
-            addCriterion("command_type not in", values, "commandType", false);
+            addCriterion("CommandType not in", values, "commandType", false);
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andCommandTypeBetween(Integer value1, Integer value2) {
-            addCriterion("command_type between", value1, value2, "commandType");
+            addCriterion("CommandType between", value1, value2, "commandType");
             return (Criteria) this;
         }
 
         /**
          */
         public Criteria andCommandTypeNotBetween(Integer value1, Integer value2) {
-            addCriterion("command_type not between", value1, value2, "commandType");
+            addCriterion("CommandType not between", value1, value2, "commandType");
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andVisitDateIsNull() {
-            addCriterion("visit_date is null");
+        public Criteria andCreateTimeIsNull() {
+            addCriterion("CreateTime is null");
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andVisitDateIsNotNull() {
-            addCriterion("visit_date is not null");
+        public Criteria andCreateTimeIsNotNull() {
+            addCriterion("CreateTime is not null");
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andVisitDateEqualTo(Date value) {
-            addCriterion("visit_date =", value, "visitDate", false);
+        public Criteria andCreateTimeEqualTo(Date value) {
+            addCriterion("CreateTime =", value, "createTime", false);
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andVisitDateNotEqualTo(Date value) {
-            addCriterion("visit_date <>", value, "visitDate", false);
+        public Criteria andCreateTimeNotEqualTo(Date value) {
+            addCriterion("CreateTime <>", value, "createTime", false);
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andVisitDateGreaterThan(Date value) {
-            addCriterion("visit_date >", value, "visitDate", false);
+        public Criteria andCreateTimeGreaterThan(Date value) {
+            addCriterion("CreateTime >", value, "createTime", false);
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andVisitDateGreaterThanOrEqualTo(Date value) {
-            addCriterion("visit_date >=", value, "visitDate", false);
+        public Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("CreateTime >=", value, "createTime", false);
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andVisitDateLessThan(Date value) {
-            addCriterion("visit_date <", value, "visitDate", false);
+        public Criteria andCreateTimeLessThan(Date value) {
+            addCriterion("CreateTime <", value, "createTime", false);
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andVisitDateLessThanOrEqualTo(Date value) {
-            addCriterion("visit_date <=", value, "visitDate", false);
+        public Criteria andCreateTimeLessThanOrEqualTo(Date value) {
+            addCriterion("CreateTime <=", value, "createTime", false);
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andVisitDateIn(List<Date> values) {
-            addCriterion("visit_date in", values, "visitDate", false);
+        public Criteria andCreateTimeIn(List<Date> values) {
+            addCriterion("CreateTime in", values, "createTime", false);
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andVisitDateNotIn(List<Date> values) {
-            addCriterion("visit_date not in", values, "visitDate", false);
+        public Criteria andCreateTimeNotIn(List<Date> values) {
+            addCriterion("CreateTime not in", values, "createTime", false);
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andVisitDateBetween(Date value1, Date value2) {
-            addCriterion("visit_date between", value1, value2, "visitDate");
+        public Criteria andCreateTimeBetween(Date value1, Date value2) {
+            addCriterion("CreateTime between", value1, value2, "createTime");
             return (Criteria) this;
         }
 
         /**
+         * 创建时间
          */
-        public Criteria andVisitDateNotBetween(Date value1, Date value2) {
-            addCriterion("visit_date not between", value1, value2, "visitDate");
+        public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
+            addCriterion("CreateTime not between", value1, value2, "createTime");
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeIsNull() {
+            addCriterion("LastModifyTime is null");
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeIsNotNull() {
+            addCriterion("LastModifyTime is not null");
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeEqualTo(Date value) {
+            addCriterion("LastModifyTime =", value, "lastModifyTime", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeNotEqualTo(Date value) {
+            addCriterion("LastModifyTime <>", value, "lastModifyTime", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeGreaterThan(Date value) {
+            addCriterion("LastModifyTime >", value, "lastModifyTime", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("LastModifyTime >=", value, "lastModifyTime", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeLessThan(Date value) {
+            addCriterion("LastModifyTime <", value, "lastModifyTime", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeLessThanOrEqualTo(Date value) {
+            addCriterion("LastModifyTime <=", value, "lastModifyTime", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeIn(List<Date> values) {
+            addCriterion("LastModifyTime in", values, "lastModifyTime", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeNotIn(List<Date> values) {
+            addCriterion("LastModifyTime not in", values, "lastModifyTime", false);
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeBetween(Date value1, Date value2) {
+            addCriterion("LastModifyTime between", value1, value2, "lastModifyTime");
+            return (Criteria) this;
+        }
+
+        /**
+         * 修改时间
+         */
+        public Criteria andLastModifyTimeNotBetween(Date value1, Date value2) {
+            addCriterion("LastModifyTime not between", value1, value2, "lastModifyTime");
             return (Criteria) this;
         }
     }
 
     /**
-     *station
+     * 洗车站点表
+     *Station
      */
     public static class Criteria extends GeneratedCriteria {
 
@@ -1313,7 +1352,8 @@ public class StationExample {
     }
 
     /**
-     * station
+     * 洗车站点表
+     * Station
      */
     public static class Criterion {
         private boolean isBinary;
@@ -1427,7 +1467,8 @@ public class StationExample {
     }
 
     /**
-     *station
+     * 洗车站点表
+     *Station
      */
     public static class OrderBy {
         private List<OrderByPair> orderByPairs;
@@ -1486,7 +1527,8 @@ public class StationExample {
     }
 
     /**
-     *station
+     * 洗车站点表
+     *Station
      */
     static class OrderByPair {
         private String fieldName;

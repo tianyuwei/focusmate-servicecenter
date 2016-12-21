@@ -9,79 +9,80 @@ import com.focusmate.services.datasource.entities.WXTransaction;
 import com.focusmate.services.datasource.entities.WXTransactionExample;
 
 /**
- * wx_transaction
+ * 微信订单表
+ * WxTransaction
  */
 public interface WXTransactionMapper {
     /**
      * 获取符合条件的记录数
-     * wx_transaction
+     * WxTransaction
      */
     int countByExample(WXTransactionExample example);
 
     /**
      * 删除符合条件的记录
-     * wx_transaction
+     * WxTransaction
      */
     @MasterDataSource
     int deleteByExample(WXTransactionExample example);
 
     /**
      * 删除指定主键的记录
-     * wx_transaction
+     * WxTransaction
      */
     @MasterDataSource
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(String transcationId);
 
     /**
      * 新增记录
-     * wx_transaction
+     * WxTransaction
      */
     @MasterDataSource
     int insert(WXTransaction record);
 
     /**
      * 选择性字段新增记录
-     * wx_transaction
+     * WxTransaction
      */
     @MasterDataSource
     int insertSelective(WXTransaction record);
 
     /**
      * 获取指定条件的记录
-     * wx_transaction
+     * WxTransaction
      */
     List<WXTransaction> selectByExample(WXTransactionExample example);
 
     /**
      * 获取指定主键的记录
-     * wx_transaction
+     * WxTransaction
      */
-    WXTransaction selectByPrimaryKey(Integer id);
+    WXTransaction selectByPrimaryKey(String transcationId);
 
     /**
      * 选择性字段更新指定条件的记录
-     * wx_transaction
+     * WxTransaction
      */
     @MasterDataSource
     int updateByExampleSelective(@Param("record") WXTransaction record, @Param("example") WXTransactionExample example);
 
     /**
      * 更新指定条件的记录
-     * wx_transaction
+     * WxTransaction
      */
     @MasterDataSource
     int updateByExample(@Param("record") WXTransaction record, @Param("example") WXTransactionExample example);
 
     /**
      * 选择性字段更新指定主键的记录
-     * wx_transaction
+     * WxTransaction
      */
     @MasterDataSource
     int updateByPrimaryKeySelective(WXTransaction record);
 
     /**
      * 更新指定主键的记录
-     * wx_transaction
+     * WxTransaction
      */
     @MasterDataSource
     int updateByPrimaryKey(WXTransaction record);

@@ -2,14 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.focusmate.services.datasource.mapper.WXTransactionMapper">
   <resultMap id="BaseResultMap" type="com.focusmate.services.datasource.entities.WXTransaction">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="custom_id" jdbcType="VARCHAR" property="customId" />
-    <result column="fee" jdbcType="INTEGER" property="fee" />
-    <result column="finish_time" jdbcType="TIMESTAMP" property="finishTime" />
-    <result column="order_time" jdbcType="TIMESTAMP" property="orderTime" />
-    <result column="station_id" jdbcType="INTEGER" property="stationId" />
-    <result column="status" jdbcType="INTEGER" property="status" />
-    <result column="transcation_id" jdbcType="VARCHAR" property="transcationId" />
+    <id column="TranscationId" jdbcType="VARCHAR" property="transcationId" />
+    <result column="CustomId" jdbcType="VARCHAR" property="customId" />
+    <result column="Fee" jdbcType="INTEGER" property="fee" />
+    <result column="StationId" jdbcType="INTEGER" property="stationId" />
+    <result column="Status" jdbcType="INTEGER" property="status" />
+    <result column="FinishTime" jdbcType="TIMESTAMP" property="finishTime" />
+    <result column="CreateTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="LastModifyTime" jdbcType="TIMESTAMP" property="lastModifyTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -98,7 +98,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, custom_id, fee, finish_time, order_time, station_id, status, transcation_id
+    TranscationId, CustomId, Fee, StationId, Status, FinishTime, CreateTime, LastModifyTime
   </sql>
   <select id="selectByExample" parameterType="com.focusmate.services.datasource.entities.WXTransactionExample" resultMap="BaseResultMap">
     select
@@ -107,7 +107,7 @@
     </if>
     'true' as QUERYID,
     <include refid="Base_Column_List" />
-    from wx_transaction
+    from WxTransaction
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -122,61 +122,61 @@
       #{size}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from wx_transaction
-    where id = #{id,jdbcType=INTEGER}
+    from WxTransaction
+    where TranscationId = #{transcationId,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from wx_transaction
-    where id = #{id,jdbcType=INTEGER}
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from WxTransaction
+    where TranscationId = #{transcationId,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="com.focusmate.services.datasource.entities.WXTransactionExample">
-    delete from wx_transaction
+    delete from WxTransaction
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="com.focusmate.services.datasource.entities.WXTransaction">
-    insert into wx_transaction (id, custom_id, fee, 
-      finish_time, order_time, station_id, 
-      status, transcation_id)
-    values (#{id,jdbcType=INTEGER}, #{customId,jdbcType=VARCHAR}, #{fee,jdbcType=INTEGER}, 
-      #{finishTime,jdbcType=TIMESTAMP}, #{orderTime,jdbcType=TIMESTAMP}, #{stationId,jdbcType=INTEGER}, 
-      #{status,jdbcType=INTEGER}, #{transcationId,jdbcType=VARCHAR})
+    insert into WxTransaction (TranscationId, CustomId, Fee, 
+      StationId, Status, FinishTime, 
+      CreateTime, LastModifyTime)
+    values (#{transcationId,jdbcType=VARCHAR}, #{customId,jdbcType=VARCHAR}, #{fee,jdbcType=INTEGER}, 
+      #{stationId,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{finishTime,jdbcType=TIMESTAMP}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastModifyTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.focusmate.services.datasource.entities.WXTransaction">
-    insert into wx_transaction
+    insert into WxTransaction
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
+      <if test="transcationId != null">
+        TranscationId,
       </if>
       <if test="customId != null">
-        custom_id,
+        CustomId,
       </if>
       <if test="fee != null">
-        fee,
-      </if>
-      <if test="finishTime != null">
-        finish_time,
-      </if>
-      <if test="orderTime != null">
-        order_time,
+        Fee,
       </if>
       <if test="stationId != null">
-        station_id,
+        StationId,
       </if>
       <if test="status != null">
-        status,
+        Status,
       </if>
-      <if test="transcationId != null">
-        transcation_id,
+      <if test="finishTime != null">
+        FinishTime,
+      </if>
+      <if test="createTime != null">
+        CreateTime,
+      </if>
+      <if test="lastModifyTime != null">
+        LastModifyTime,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
+      <if test="transcationId != null">
+        #{transcationId,jdbcType=VARCHAR},
       </if>
       <if test="customId != null">
         #{customId,jdbcType=VARCHAR},
@@ -184,55 +184,55 @@
       <if test="fee != null">
         #{fee,jdbcType=INTEGER},
       </if>
-      <if test="finishTime != null">
-        #{finishTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="orderTime != null">
-        #{orderTime,jdbcType=TIMESTAMP},
-      </if>
       <if test="stationId != null">
         #{stationId,jdbcType=INTEGER},
       </if>
       <if test="status != null">
         #{status,jdbcType=INTEGER},
       </if>
-      <if test="transcationId != null">
-        #{transcationId,jdbcType=VARCHAR},
+      <if test="finishTime != null">
+        #{finishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyTime != null">
+        #{lastModifyTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.focusmate.services.datasource.entities.WXTransactionExample" resultType="java.lang.Integer">
-    select count(*) from wx_transaction
+    select count(*) from WxTransaction
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update wx_transaction
+    update WxTransaction
     <set>
-      <if test="record.id != null">
-        id = #{record.id,jdbcType=INTEGER},
+      <if test="record.transcationId != null">
+        TranscationId = #{record.transcationId,jdbcType=VARCHAR},
       </if>
       <if test="record.customId != null">
-        custom_id = #{record.customId,jdbcType=VARCHAR},
+        CustomId = #{record.customId,jdbcType=VARCHAR},
       </if>
       <if test="record.fee != null">
-        fee = #{record.fee,jdbcType=INTEGER},
-      </if>
-      <if test="record.finishTime != null">
-        finish_time = #{record.finishTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.orderTime != null">
-        order_time = #{record.orderTime,jdbcType=TIMESTAMP},
+        Fee = #{record.fee,jdbcType=INTEGER},
       </if>
       <if test="record.stationId != null">
-        station_id = #{record.stationId,jdbcType=INTEGER},
+        StationId = #{record.stationId,jdbcType=INTEGER},
       </if>
       <if test="record.status != null">
-        status = #{record.status,jdbcType=INTEGER},
+        Status = #{record.status,jdbcType=INTEGER},
       </if>
-      <if test="record.transcationId != null">
-        transcation_id = #{record.transcationId,jdbcType=VARCHAR},
+      <if test="record.finishTime != null">
+        FinishTime = #{record.finishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createTime != null">
+        CreateTime = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastModifyTime != null">
+        LastModifyTime = #{record.lastModifyTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null">
@@ -240,55 +240,55 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update wx_transaction
-    set id = #{record.id,jdbcType=INTEGER},
-      custom_id = #{record.customId,jdbcType=VARCHAR},
-      fee = #{record.fee,jdbcType=INTEGER},
-      finish_time = #{record.finishTime,jdbcType=TIMESTAMP},
-      order_time = #{record.orderTime,jdbcType=TIMESTAMP},
-      station_id = #{record.stationId,jdbcType=INTEGER},
-      status = #{record.status,jdbcType=INTEGER},
-      transcation_id = #{record.transcationId,jdbcType=VARCHAR}
+    update WxTransaction
+    set TranscationId = #{record.transcationId,jdbcType=VARCHAR},
+      CustomId = #{record.customId,jdbcType=VARCHAR},
+      Fee = #{record.fee,jdbcType=INTEGER},
+      StationId = #{record.stationId,jdbcType=INTEGER},
+      Status = #{record.status,jdbcType=INTEGER},
+      FinishTime = #{record.finishTime,jdbcType=TIMESTAMP},
+      CreateTime = #{record.createTime,jdbcType=TIMESTAMP},
+      LastModifyTime = #{record.lastModifyTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.focusmate.services.datasource.entities.WXTransaction">
-    update wx_transaction
+    update WxTransaction
     <set>
       <if test="customId != null">
-        custom_id = #{customId,jdbcType=VARCHAR},
+        CustomId = #{customId,jdbcType=VARCHAR},
       </if>
       <if test="fee != null">
-        fee = #{fee,jdbcType=INTEGER},
-      </if>
-      <if test="finishTime != null">
-        finish_time = #{finishTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="orderTime != null">
-        order_time = #{orderTime,jdbcType=TIMESTAMP},
+        Fee = #{fee,jdbcType=INTEGER},
       </if>
       <if test="stationId != null">
-        station_id = #{stationId,jdbcType=INTEGER},
+        StationId = #{stationId,jdbcType=INTEGER},
       </if>
       <if test="status != null">
-        status = #{status,jdbcType=INTEGER},
+        Status = #{status,jdbcType=INTEGER},
       </if>
-      <if test="transcationId != null">
-        transcation_id = #{transcationId,jdbcType=VARCHAR},
+      <if test="finishTime != null">
+        FinishTime = #{finishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        CreateTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyTime != null">
+        LastModifyTime = #{lastModifyTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where TranscationId = #{transcationId,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.focusmate.services.datasource.entities.WXTransaction">
-    update wx_transaction
-    set custom_id = #{customId,jdbcType=VARCHAR},
-      fee = #{fee,jdbcType=INTEGER},
-      finish_time = #{finishTime,jdbcType=TIMESTAMP},
-      order_time = #{orderTime,jdbcType=TIMESTAMP},
-      station_id = #{stationId,jdbcType=INTEGER},
-      status = #{status,jdbcType=INTEGER},
-      transcation_id = #{transcationId,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
+    update WxTransaction
+    set CustomId = #{customId,jdbcType=VARCHAR},
+      Fee = #{fee,jdbcType=INTEGER},
+      StationId = #{stationId,jdbcType=INTEGER},
+      Status = #{status,jdbcType=INTEGER},
+      FinishTime = #{finishTime,jdbcType=TIMESTAMP},
+      CreateTime = #{createTime,jdbcType=TIMESTAMP},
+      LastModifyTime = #{lastModifyTime,jdbcType=TIMESTAMP}
+    where TranscationId = #{transcationId,jdbcType=VARCHAR}
   </update>
 </mapper>
