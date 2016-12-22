@@ -134,7 +134,7 @@
         select
         m.StationId, m.Name, m.Queue, m.Topic, m.Status, m.CreateTime, m.LastModifyTime
         from MessageSubscriber m,WxTransaction w
-        where w.TranscationId = #{transactionId,jdbcType=VARCHAR}
+        where m.StationId = w.StationId and w.TranscationId = #{transactionId,jdbcType=VARCHAR}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from MessageSubscriber
